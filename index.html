@@ -74,8 +74,30 @@
   <header>
     <h1>Turn your side hustle into a full-time income</h1>
     <p class="lead">Track, manage &amp; grow your social media from one dashboard.</p>
-    <a href="https://accounts.google.com/o/oauth2/v2/auth?client_id=YOUR_CLIENT_ID&amp;redirect_uri=YOUR_REDIRECT_URI&amp;response_type=code&amp;scope=openid%20email%20profile%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly&amp;access_type=offline&amp;prompt=consent"
-       class="button">Log in with Google</a>
+
+    <!-- Google OAuth -->
+    <a
+      href="https://accounts.google.com/o/oauth2/v2/auth?
+        client_id=YOUR_GOOGLE_CLIENT_ID
+        &redirect_uri=YOUR_GOOGLE_REDIRECT_URI
+        &response_type=code
+        &scope=openid%20email%20profile"
+      class="button"
+    >
+      Log in with Google
+    </a>
+
+    <!-- TikTok OAuth -->
+    <a
+      href="https://open.tiktok.com/platform/oauth/connect?
+        client_key=aw422o4b2fjj3cri
+        &redirect_uri=https%3A%2F%2Fdonblake101.github.io%2Fcreatorflow-homepage%2Foauth%2Fcallback
+        &response_type=code
+        &scope=user.info.profile,user.info.stats,video.list"
+      class="button"
+    >
+      Log in with TikTok
+    </a>
   </header>
 
   <section class="features">
@@ -98,9 +120,10 @@
   </section>
 
   <footer>
-    © 2025 CreatorFlowAI • <a href="/privacy.html">Privacy Policy</a>
+    © 2025 CreatorFlowAI • <a href="/privacy.html">Privacy Policy</a> • <a href="/terms.html">Terms of Service</a>
   </footer>
 
 </body>
 </html>
+
 
