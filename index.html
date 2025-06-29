@@ -36,9 +36,7 @@
       position: absolute; top: 0; left: 0; right: 0; bottom: 0;
       background: rgba(0,0,0,0.6);
     }
-    header > * {
-      position: relative; z-index: 1;
-    }
+    header > * { position: relative; z-index: 1; }
     h1 { font-size: 2.5rem; margin-bottom: .5rem; color: #f3f; }
     p.lead { font-size: 1.2rem; margin-bottom: 1.5rem; }
 
@@ -78,20 +76,22 @@
     <!-- Google OAuth -->
     <a
       class="button"
-      href="https://accounts.google.com/o/oauth2/v2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=YOUR_GOOGLE_REDIRECT_URI&response_type=code&scope=openid%20email%20profile"
+      href="https://accounts.google.com/o/oauth2/v2/auth?
+        client_id=YOUR_GOOGLE_CLIENT_ID
+        &redirect_uri=YOUR_GOOGLE_REDIRECT_URI
+        &response_type=code
+        &scope=openid%20email%20profile"
     >
       Log in with Google
     </a>
 
-<!-- TikTok OAuth -->
-<a
-  class="button"
-  href="https://open.tiktok.com/platform/oauth/connect?client_key=aw422o4b2fjj3cri&redirect_uri=https%3A%2F%2Fdonblake101.github.io%2Fcreatorflow-homepage%2Foauth%2Fcallback%2F&response_type=code&scope=user.info.profile%2Cuser.info.stats%2Cvideo.list"
->
-  Log in with TikTok
-</a>
-
-
+    <!-- TikTok “hard-coded” OAuth callback -->
+    <a
+      class="button"
+      href="oauth/callback/"
+    >
+      Log in with TikTok
+    </a>
   </header>
 
   <section class="features">
@@ -119,5 +119,6 @@
 
 </body>
 </html>
+
 
 
