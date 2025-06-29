@@ -5,29 +5,9 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>OAuth Callback</title>
   <style>
-    body { 
-      font-family: sans-serif; 
-      padding: 2rem; 
-      background: #f4f4f4; 
-      color: #333; 
-    }
-    .container {
-      max-width: 500px;
-      margin: auto;
-      background: #fff;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    }
-    h1 { margin-bottom: 1rem; }
-    code {
-      display: block;
-      background: #272822;
-      color: #f8f8f2;
-      padding: .5rem;
-      border-radius: 4px;
-      word-break: break-all;
-    }
+    body { font-family: sans-serif; padding: 2rem; background: #f4f4f4; }
+    .container { max-width: 500px; margin: auto; background: #fff; padding: 2rem; border-radius: 8px; }
+    code { display: block; background: #272822; color: #f8f8f2; padding: .5rem; border-radius: 4px; word-break: break-all; }
   </style>
 </head>
 <body>
@@ -35,17 +15,17 @@
     <h1>OAuth callback received</h1>
     <p>Here’s your query string:</p>
     <code id="queryString">Loading…</code>
-    <p>If you see a `code` param above, you can now exchange it for an access token.</p>
+    <p>If you see a <code>code</code> param above, you can now exchange it for an access token.</p>
   </div>
 
   <script>
-    // grab the full '?code=…&state=…' part
+    // Grab the full “?code=…&state=…” part of the URL:
     const qs = window.location.search;
-
-    // show it in the <code> block
+    // Display it (or a fallback if none):
     document.getElementById('queryString').textContent =
       qs || 'No query string present!';
   </script>
 </body>
 </html>
+
 
