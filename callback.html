@@ -1,0 +1,26 @@
+<!-- callback.html (in the repo root) -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>OAuth Callback</title>
+  <style>
+    /* minimal styling so we can see it */
+    body { font-family: sans-serif; padding:2rem; line-height:1.4; }
+    code { display:block; margin:1rem 0; background:#272; color:#8f8; padding:.5rem; border-radius:4px; word-break:break-all; }
+  </style>
+</head>
+<body>
+  <h1>OAuth callback received</h1>
+  <p>Here’s your query string:</p>
+  <code id="queryString">Loading…</code>
+  <p>If you see a <code>code</code> param above, you can now exchange it for an access token.</p>
+
+  <script>
+    const qs = window.location.search;
+    document.getElementById('queryString').textContent =
+      qs.length > 1 ? qs : 'No query string present!';
+  </script>
+</body>
+</html>
