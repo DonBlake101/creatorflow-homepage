@@ -10,9 +10,9 @@ dotenv.config();
 const app = express();
 const {
   SERVER_URL=https://creatorflow-auth.vercel.app        # replace after you deploy if you pick a different name
-FRONTEND_URL=https://donblake101.github.io/creatorflow-homepage
+FRONTEND_URL=https:donblake101.github.io/creatorflow-homepage
 TIKTOK_CLIENT_KEY=aw422o4b2fjj3cri
-TIKTOK_CLIENT_SECRET=PASTE_YOUR_REAL_SECRET_HERE
+TIKTOK_CLIENT_SECRET=c8KyadEdaw9zSO4Q5FgTyI5Oq8Jsl779
 SESSION_SECRET=make_this_long_random_like_64chars
 SCOPES=user.info.basic user.info.profile user.info.stats video.list
 } = process.env;
