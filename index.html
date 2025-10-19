@@ -45,11 +45,12 @@
     © 2025 CreatorFlowAI · <a href="./privacy.html" style="color:#8a6cf4">Privacy Policy</a> · <a href="./terms.html" style="color:#8a6cf4">Terms</a>
   </footer>
 
-  <script>
-    // Replace this once you deploy the backend
-    const AUTH_BASE = "https://creatorflow-auth.vercel.app";
-    document.getElementById("tiktok-login").href = `${AUTH_BASE}/auth/tiktok`;
-  </script>
-</body>
-</html>
+<!-- at the bottom, before </body> -->
+<script>
+  // Use your stable Vercel domain (not a preview URL)
+  const AUTH_BASE = "https://creatorflow-auth.vercel.app";
+  // Point the button at your backend
+  document.getElementById("tiktok-login").href = `${AUTH_BASE}/auth/tiktok`;
+</script>
+
 
