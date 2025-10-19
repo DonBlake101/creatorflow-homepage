@@ -5,122 +5,51 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>CreatorFlowAI</title>
   <style>
-    /* Reset & Base */
     * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #0d0d14;
-      color: #eee;
-      line-height: 1.6;
-    }
-    a { color: #8a6cf4; text-decoration: none; }
-    a.button {
-      display: inline-block;
-      margin: 1rem .5rem;
-      padding: .75rem 1.5rem;
-      background: #8a6cf4;
-      color: #fff;
-      border-radius: 4px;
-      font-weight: bold;
-    }
-
-    /* Hero */
-    header {
-      background: url('https://via.placeholder.com/1600x600') center/cover no-repeat;
-      text-align: center;
-      padding: 6rem 1rem;
-      position: relative;
-    }
-    header::after {
-      content: '';
-      position: absolute; 
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.6);
-    }
-    header > * { position: relative; z-index: 1; }
-    h1 { font-size: 2.5rem; margin-bottom: .5rem; color: #f3f; }
-    p.lead { font-size: 1.2rem; margin-bottom: 1.5rem; }
-
-    /* Features */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
-      gap: 1.5rem;
-      max-width: 1000px;
-      margin: 3rem auto;
-      padding: 0 1rem;
-    }
-    .feature {
-      background: #1a1a28;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.4);
-    }
-    .feature h3 { margin-bottom: .75rem; color: #8a6cf4; }
-    .feature p { font-size: .95rem; }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: .85rem;
-      color: #777;
-    }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background: #0d0d14; color: #eee; line-height: 1.6; }
+    header { text-align: center; padding: 6rem 1rem; }
+    h1 { font-size: 2.5rem; color: #ff5bf7; margin-bottom: .5rem; }
+    p.lead { font-size: 1.2rem; margin-bottom: 1.5rem; color: #cfcde6; }
+    a.button { display: inline-block; margin: 1rem .5rem; padding: .75rem 1.5rem; background: #8a6cf4; color: #fff; border-radius: 8px; font-weight: 700; text-decoration: none; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.25rem; max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+    .card { background: #1a1a28; padding: 1.25rem; border-radius: 10px; }
+    .card h3 { color: #b49cff; margin-bottom: .5rem; }
+    footer { text-align:center; color:#888; padding:2rem 1rem; font-size:.9rem; }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Turn your side hustle into a full-time income</h1>
     <p class="lead">Track, manage &amp; grow your social media from one dashboard.</p>
 
-    <!-- Google OAuth (leave this for now) -->
-    <a class="button"
-   href="https://accounts.google.com/o/oauth2/v2/auth?client_id=YOUR_GOOGLE_CLIENT_ID&redirect_uri=https%3A%2F%2Fdonblake101.github.io%2Fcreatorflow-homepage%2Fcallback.html&response_type=code&access_type=offline&include_granted_scopes=true&scope=openid%20email%20profile%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyoutube.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyt-analytics.readonly%20https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fyt-analytics-monetary.readonly&prompt=consent&state=cf_demo_123">
-  Log in with Google
-</a>
-
-
-<!-- TikTok OAuth -->
-<a class="button"
-   href="https://www.tiktok.com/v2/auth/authorize/?client_key=aw422o4b2fjj3cri&redirect_uri=https%3A%2F%2Fdonblake101.github.io%2Fcreatorflow-homepage%2Fcallback.html&response_type=code&scope=user.info.basic&state=cf_demo_123">
-  Log in with TikTok
-</a>
-
-
-
-
-    
+    <!-- TikTok OAuth via backend -->
+    <a class="button" id="tiktok-login" href="#">Log in with TikTok</a>
   </header>
 
-  <section class="features">
-    <div class="feature">
+  <section class="grid">
+    <div class="card">
       <h3>Grow Your Social Media</h3>
-      <p>AI-powered insights &amp; personalized recommendations to increase followers and engagement.</p>
+      <p>Smart insights and guidance to boost reach and engagement.</p>
     </div>
-    <div class="feature">
+    <div class="card">
       <h3>Plan &amp; Schedule</h3>
-      <p>Smart content calendar to keep you consistent across TikTok, YouTube, Facebook, and more.</p>
+      <p>Keep consistent across platforms with a clean content calendar.</p>
     </div>
-    <div class="feature">
+    <div class="card">
       <h3>Understand Your Earnings</h3>
-      <p>Real-time reports on views, RPM, ad revenue &amp; subscriber growth.</p>
-    </div>
-    <div class="feature">
-      <h3>Match with Top Brands</h3>
-      <p>Accept, negotiate &amp; secure paid collaborations directly in the app.</p>
+      <p>See trends in views, RPM, revenue and subscriber growth.</p>
     </div>
   </section>
 
   <footer>
-    © 2025 CreatorFlowAI •
-    <a href="/creatorflow-homepage/privacy.html">Privacy Policy</a> •
-    <a href="/creatorflow-homepage/terms.html">Terms of Service</a>
+    © 2025 CreatorFlowAI · <a href="./privacy.html" style="color:#8a6cf4">Privacy Policy</a> · <a href="./terms.html" style="color:#8a6cf4">Terms</a>
   </footer>
 
+  <script>
+    // Replace this once you deploy the backend
+    const AUTH_BASE = "https://creatorflow-auth.vercel.app";
+    document.getElementById("tiktok-login").href = `${AUTH_BASE}/auth/tiktok`;
+  </script>
 </body>
 </html>
-
-
-
 
