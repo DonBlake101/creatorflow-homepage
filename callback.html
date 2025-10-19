@@ -1,26 +1,31 @@
 <!-- callback.html (in the repo root) -->
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>OAuth Callback</title>
+  <meta charset="utf-8">
+  <title>Callback</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-    /* minimal styling so we can see it */
-    body { font-family: sans-serif; padding:2rem; line-height:1.4; }
-    code { display:block; margin:1rem 0; background:#272; color:#8f8; padding:.5rem; border-radius:4px; word-break:break-all; }
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:#0d0d14; color:#eee; padding:2rem; line-height:1.5; }
+    pre { background:#1a1a28; padding:1rem; border-radius:10px; overflow:auto; }
+    a { color:#8a6cf4; }
   </style>
 </head>
 <body>
-  <h1>OAuth callback received</h1>
-  <p>Here’s your query string:</p>
-  <code id="queryString">Loading…</code>
-  <p>If you see a <code>code</code> param above, you can now exchange it for an access token.</p>
+  <h1>Returning from TikTok…</h1>
+  <p id="status">Checking session…</p>
+  <pre id="out"></pre>
+  <p><a href="./">Back to home</a></p>
 
   <script>
-    const qs = window.location.search;
-    document.getElementById('queryString').textContent =
-      qs.length > 1 ? qs : 'No query string present!';
+    const AUTH_BASE = "https://creatorflow-auth.vercel.app"; // same as index.html
+    fetch(`${AUTH_BASE}/api/me`, { credentials: "include" })
+      .then(r => r.json())
+      .then(j => {
+        document.getElementById("status").textContent = j.error ? j.error : "Logged in";
+        document.getElementById("out").textContent = JSON.stringify(j, null, 2);
+      })
+      .catch(() => { document.getElementById("status").textContent = "Could not verify login"; });
   </script>
 </body>
 </html>
