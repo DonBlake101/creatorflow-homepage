@@ -17,15 +17,16 @@
   <pre id="out"></pre>
   <p><a href="./">Back to home</a></p>
 
-  <script>
-    const AUTH_BASE = "https://creatorflow-auth.vercel.app"; // same as index.html
-    fetch(`${AUTH_BASE}/api/me`, { credentials: "include" })
-      .then(r => r.json())
-      .then(j => {
-        document.getElementById("status").textContent = j.error ? j.error : "Logged in";
-        document.getElementById("out").textContent = JSON.stringify(j, null, 2);
-      })
-      .catch(() => { document.getElementById("status").textContent = "Could not verify login"; });
-  </script>
+<script>
+  const AUTH_BASE = "https://creatorflow-auth.vercel.app";
+  fetch(`${AUTH_BASE}/api/me`, { credentials: "include" })
+    .then(r => r.json())
+    .then(j => {
+      document.getElementById("status").textContent = j.error ? j.error : "Logged in";
+      document.getElementById("out").textContent = JSON.stringify(j, null, 2);
+    })
+    .catch(() => { document.getElementById("status").textContent = "Could not verify login"; });
+</script>
+
 </body>
 </html>
